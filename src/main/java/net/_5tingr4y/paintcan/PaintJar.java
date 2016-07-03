@@ -20,7 +20,7 @@ package net._5tingr4y.paintcan;
 
 import net._5tingr4y.paintcan.data.InitializationData;
 
-public class Paintcan {
+public class PaintJar {
 
     public static void main(String[] args) {
         //TODO: read config(s)
