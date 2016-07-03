@@ -19,17 +19,24 @@
 package net._5tingr4y.paintcan;
 
 import net._5tingr4y.paintcan.data.InitializationData;
+import net._5tingr4y.paintcan.ui.MainWindow;
 
 public class Controller {
 
+    private MainWindow mainWindow;
+
     private Controller() {}
 
-    void init(InitializationData initializationData) {
-        //TODO: init plugins
+    void init(InitializationData data) {
+        //TODO: init plugins / prepare window creation
+
+        mainWindow = new MainWindow(data.width, data.height, data.posX, data.posY);
     }
 
     void start() {
         //TODO: create windows
+
+        mainWindow.createFrame();
     }
 
     //statics

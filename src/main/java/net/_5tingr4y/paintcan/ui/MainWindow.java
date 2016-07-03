@@ -16,14 +16,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ------------------------------------------------------------------------*/
 
-package net._5tingr4y.paintcan.data;
+package net._5tingr4y.paintcan.ui;
 
-public class InitializationData {
+public class MainWindow {
 
-    //main window
-    public int width = 800, height = 600;
+    private int width, height;
 
-    public int posX = 100, posY = 100;
+    private int posX, posY;
 
+    public MainWindow(int width_, int height_, int posX_, int posY_) {
+        width = width_;
+        height = height_;
 
+        posX = posX_;
+        posY = posY_;
+    }
+
+    public void createFrame() {
+        //TODO: create JFrame
+    }
 }
