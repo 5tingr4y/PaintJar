@@ -18,16 +18,29 @@
 
 package net._5tingr4y.paintcan;
 
-import net._5tingr4y.paintcan.data.InitializationData;
+import java.util.Properties;
 
 public class PaintJar {
 
+    private static Controller controller;
+
     public static void main(String[] args) {
         //TODO: read config(s)
+        Properties settings = new Properties();
 
-        InitializationData data = new InitializationData();
+        //TODO: center window
+        settings.setProperty("mainwindow_posX", "100");
+        settings.setProperty("mainwindow_posY", "100");
+        settings.setProperty("mainwindow_width", "800");
+        settings.setProperty("mainwindow_height", "600");
 
-        Controller.get().init(data);
-        Controller.get().start();
+        controller = new Controller(settings);
+
+        controller.init();
+        controller.start();
+    }
+
+    public static Controller getController() {
+        return controller;
     }
 }

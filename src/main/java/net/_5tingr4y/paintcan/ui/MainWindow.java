@@ -24,12 +24,12 @@ public class MainWindow {
 
     private int posX, posY;
 
-    public MainWindow(int width_, int height_, int posX_, int posY_) {
-        width = width_;
-        height = height_;
-
+    public MainWindow(int posX_, int posY_, int width_, int height_) {
         posX = posX_;
         posY = posY_;
+
+        width = width_;
+        height = height_;
     }
 
     public void createFrame() {

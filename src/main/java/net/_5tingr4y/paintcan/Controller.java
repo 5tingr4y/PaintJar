@@ -18,31 +18,36 @@
 
 package net._5tingr4y.paintcan;
 
-import net._5tingr4y.paintcan.data.InitializationData;
 import net._5tingr4y.paintcan.ui.MainWindow;
+
+import java.util.Properties;
 
 public class Controller {
 
+    public final Properties settings;
+
     private MainWindow mainWindow;
 
-    private Controller() {}
+    Controller(Properties settings_) {
+        if(settings_ == null)
+            throw new IllegalArgumentException("Controller Settings must not be null");
 
-    void init(InitializationData data) {
+        settings = settings_;
+    }
+
+    void init() {
         //TODO: init plugins / prepare window creation
 
-        mainWindow = new MainWindow(data.width, data.height, data.posX, data.posY);
+
+        mainWindow = new MainWindow(Integer.parseInt(settings.getProperty("mainwindow_posX")),
+                Integer.parseInt(settings.getProperty("mainwindow_posY")),
+                Integer.parseInt(settings.getProperty("mainwindow_width")),
+                Integer.parseInt(settings.getProperty("mainwindow_height")));
     }
 
     void start() {
         //TODO: create windows
 
         mainWindow.createFrame();
-    }
-
-    //statics
-    private static Controller instance = new Controller();
-
-    public static Controller get() {
-        return instance;
     }
 }
