@@ -38,7 +38,6 @@ public class Controller {
     void init() {
         //TODO: init plugins / prepare window creation
 
-
         mainWindow = new MainWindow(Integer.parseInt(settings.getProperty("mainwindow_posX")),
                 Integer.parseInt(settings.getProperty("mainwindow_posY")),
                 Integer.parseInt(settings.getProperty("mainwindow_width")),

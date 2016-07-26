@@ -18,11 +18,15 @@
 
 package net._5tingr4y.paintcan.ui;
 
+import javax.swing.*;
+
 public class MainWindow {
 
     private int width, height;
 
     private int posX, posY;
+
+    private JFrame jframe;
 
     public MainWindow(int posX_, int posY_, int width_, int height_) {
         posX = posX_;
@@ -34,5 +38,10 @@ public class MainWindow {
 
     public void createFrame() {
         //TODO: create JFrame
+        jframe = new JFrame("PaintJar");
+
+        jframe.setBounds(posX, posY, width, height);
+
+        jframe.setVisible(true);
     }
 }

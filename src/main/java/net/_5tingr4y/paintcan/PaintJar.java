@@ -18,6 +18,7 @@
 
 package net._5tingr4y.paintcan;
 
+import java.awt.Toolkit;
 import java.util.Properties;
 
 public class PaintJar {
@@ -28,11 +29,14 @@ public class PaintJar {
         //TODO: read config(s)
         Properties settings = new Properties();
 
-        //TODO: center window
-        settings.setProperty("mainwindow_posX", "100");
-        settings.setProperty("mainwindow_posY", "100");
-        settings.setProperty("mainwindow_width", "800");
-        settings.setProperty("mainwindow_height", "600");
+        // if I miss half a pixel here or so, it doesn't matter
+        int screenWidth = (int)Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+        int screenHeight = (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+
+        settings.setProperty("mainwindow_posX", Integer.toString(screenWidth / 4));
+        settings.setProperty("mainwindow_posY", Integer.toString(screenHeight / 8));
+        settings.setProperty("mainwindow_width", Integer.toString(screenWidth / 2));
+        settings.setProperty("mainwindow_height", Integer.toString(screenHeight * 3 / 4));
 
         controller = new Controller(settings);
 
