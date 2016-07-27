@@ -1,0 +1,1 @@
+- Option to choose between single and multiple main window(s) (Paint.NET style vs Gimp style)
